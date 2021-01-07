@@ -1,5 +1,6 @@
 import os
 import csv
+import sys
 election = os.path.join('Resources', 'election_data.csv')
 
 # Need help building the function
@@ -41,6 +42,7 @@ with open(election, 'r') as csv_file:
             candidate_count[candidate] = 1
         elif candidate in candidate_count.keys():
             candidate_count[candidate] += 1
+    sys.stdout = open('analysis.txt','a')
     print("Election Results")
     print("--------------------")
     print(f"Total Votes: {total_votes}")

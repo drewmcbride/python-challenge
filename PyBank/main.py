@@ -1,5 +1,6 @@
 import os
 import csv
+import sys
 budget = os.path.join("Resources","budget_data.csv")
 total_months = 0
 net_total = 0
@@ -43,6 +44,7 @@ with open(budget, 'r') as csv_file:
 
 
         average_change = total_change/85
+    sys.stdout = open('analysis.txt','a')
     print("Financial Analysis")
     print("--------------------")
     print(f"Total Months: {total_months}")
